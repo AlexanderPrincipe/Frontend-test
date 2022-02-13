@@ -25,7 +25,6 @@ export class HeroeMarvelComponent implements OnInit {
 			maxWidth:"90vw",
 			data: {
 				heroe: item,
-				// totalVacantes: 
 			}
 		});
   }

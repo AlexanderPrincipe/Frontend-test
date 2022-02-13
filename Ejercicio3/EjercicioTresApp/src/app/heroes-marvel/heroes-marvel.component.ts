@@ -14,6 +14,7 @@ export class HeroesMarvelComponent implements OnInit {
   dataTem: any = [];
   inputFilter: any;
   valorInput: string = '';
+  cargando: boolean = false;
 
   constructor(
     public serviceMarvel: MarvelService,
@@ -23,9 +24,11 @@ export class HeroesMarvelComponent implements OnInit {
   ngOnInit(): void {
     this.returnScrolled();
     this.getAllHeroes();
+
   }
 
   async returnScrolled() {
+   
     let offset = 0;
     let contador = 0;
     window.addEventListener('scroll', async () => {
@@ -35,6 +38,9 @@ export class HeroesMarvelComponent implements OnInit {
           contador++;
           scrolled = 0;
           if (contador == 1) {
+            console.log('CARGANDO2', this.cargando);
+            this.cargando = true;
+            console.log('CARGANDO', this.cargando);
             let aumento = 20;
             offset = offset + aumento;
             const nuevaData = await this.serviceMarvel.getHeroesPlus(20, offset).toPromise();
@@ -42,6 +48,7 @@ export class HeroesMarvelComponent implements OnInit {
               this.data.push(nuevaData[i]);         
             }
             contador = 0;
+            this.cargando = false;
           }
       }
     });
