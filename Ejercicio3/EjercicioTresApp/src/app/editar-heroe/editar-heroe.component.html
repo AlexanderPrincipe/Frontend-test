@@ -1,0 +1,15 @@
+<h4 class="modalheader mb-2 d-flex justify-content-between align-items-center">
+  <span style="flex: 1 1 auto"></span>
+  <span (click)="closeModal()" class="modalclosebutton d-flex align-items-center justify-content-center" style="cursor: pointer;">
+    <mat-icon matSuffix>cancel</mat-icon>
+  </span>
+</h4>
+<div class="d-flex">
+  <div class="row justify-content-center">
+    <div class="card col-6" style="width: 18rem; margin:10px; padding: 0px;">
+      <app-heroe-marvel [heroe]="heroe.heroe"></app-heroe-marvel>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,8 @@
+<div>
+  <img class="card-img-top" src={{heroe.thumbnail.path}}.{{heroe.thumbnail.extension}} style="max-width: 300px; max-height: 300px;">
+      <div class="card-body">
+        <h5 class="card-title">{{heroe.name}}</h5>
+        <p class="card-text">{{heroe.description ? heroe.description : 'No tiene descripcion'}}</p>
+        <button href="#"  class="btn btn-primary" (click)="editarHeroe(heroe)">Editar</button> 
+      </div>
+</div>
