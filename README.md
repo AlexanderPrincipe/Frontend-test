@@ -6,11 +6,11 @@
 
 ### PASOS para correr el Ejercicio 1📋
 
-1. node Ejercicio1.js
+- node Ejercicio1.js
 
 ### PASOS para correr el Ejercicio 2📋
 
-1. node Ejercicio2.js
+- node Ejercicio2.js
 
 ### PASOS para correr el Ejercicio 3📋
 
