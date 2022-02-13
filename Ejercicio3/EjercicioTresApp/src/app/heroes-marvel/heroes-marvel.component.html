@@ -1,29 +1,41 @@
-  <div class="d-flex justify-content-center mb-5 mt-5">
-    <div class="form-group justify-content-center">
-      <label for="exampleInputEmail1" class="label-input">Buscador:</label>
-      <input type="text" class="form-control" placeholder="nombre del héroe" [ngModel]="inputFilter" (ngModelChange)="changeValue($event)">
-      <button class="btn btn-primary" (click)="buscarHeroe()" style="margin-top: 5px;">Buscar</button>
+<div style="background-image: radial-gradient(circle at 6.25% 93.75%, #007593 0, #0075a4 3.85%, #0075b4 7.69%, #0074c2 11.54%, #0073cf 15.38%, #0072d9 19.23%, #006fe2 23.08%, #006de8 26.92%, #0069eb 30.77%, #0064ec 34.62%, #005ee9 38.46%, #0056e5 42.31%, #004dde 46.15%, #4d42d4 50%, #7234c8 53.85%, #8c21bb 57.69%, #a000ac 61.54%, #af009c 65.38%, #bb008a 69.23%, #c40079 73.08%, #ca0067 76.92%, #cd0055 80.77%, #ce0044 84.62%, #cc0033 88.46%, #c80022 92.31%, #c3000d 96.15%, #bc0000 100%);">
+  <div class="row">
+    <div class="d-flex justify-content-center mt-5">
+      <img src="https://logodownload.org/wp-content/uploads/2017/05/marvel-logo-3-1.png" alt="" style="width: 30%; height: auto;">
     </div>
   </div>
-
-  <div class="d-flex justify-content-center mb-5 mt-5">
-    <div class="form-group justify-content-center">
-      <label for="exampleInputEmail1" class="label-input">Buscador en vivo:</label>
-      <input type="text" class="form-control" placeholder="nombre del héroe" [ngModel]="inputFilter" (ngModelChange)="changeValueLive($event)">
+  
+  
+  <div class="row" style="margin-bottom: 50px;">
+    <div class="col-md-6 col-xs-12">
+      <div class="d-flex justify-content-center mb-5 mt-5">
+        <div class="form-group justify-content-center">
+          <label for="exampleInputEmail1" class="label-input">Buscador:</label>
+          <input type="text" class="form-control" placeholder="nombre del héroe" [ngModel]="inputFilter" (ngModelChange)="changeValue($event)">
+          <button class="btn btn-primary" (click)="buscarHeroe()" style="margin-top: 5px;">Buscar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+      <div class="d-flex justify-content-center mb-5 mt-5">
+        <div class="form-group justify-content-center">
+          <label for="exampleInputEmail1" class="label-input">Buscador en vivo:</label>
+          <input type="text" class="form-control" placeholder="nombre del héroe" [ngModel]="inputFilter" (ngModelChange)="changeValueLive($event)">
+        </div>
+      </div>
     </div>
   </div>
-
-
-
-<div class="d-flex">
-  <div class="row justify-content-center">
-    <div class="card col-6" style="width: 18rem; margin:10px; padding: 0px;" *ngFor="let heroe of data">
-      <app-heroe-marvel [heroe]="heroe"></app-heroe-marvel>
+  
+  
+  <div class="d-flex">
+    <div class="row justify-content-center">
+      <div class="card col-6" style="width: 18rem; margin:10px; padding: 0px;" *ngFor="let heroe of data">
+        <app-heroe-marvel [heroe]="heroe"></app-heroe-marvel>
+      </div>
     </div>
+  </div>
+  
+  <div *ngIf="cargando" class="d-flex justify-content-center">
+    <div style="color: #000; font-size: 40px; margin-top: 50px;">Cargando ...</div>
   </div>
 </div>
-
-<div *ngIf="cargando" class="d-flex justify-content-center">
-  <div style="color: #000; font-size: 40px; margin-top: 50px;">Cargando ...</div>
-</div>
-
